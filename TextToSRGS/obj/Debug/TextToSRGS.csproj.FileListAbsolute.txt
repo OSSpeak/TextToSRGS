@@ -1,0 +1,6 @@
+C:\Users\evan\modules\net\OSSpeak\TextToSRGS\TextToSRGS\bin\Debug\TextToSRGS.exe.config
+C:\Users\evan\modules\net\OSSpeak\TextToSRGS\TextToSRGS\bin\Debug\TextToSRGS.exe
+C:\Users\evan\modules\net\OSSpeak\TextToSRGS\TextToSRGS\bin\Debug\TextToSRGS.pdb
+C:\Users\evan\modules\net\OSSpeak\TextToSRGS\TextToSRGS\obj\Debug\TextToSRGS.csprojResolveAssemblyReference.cache
+C:\Users\evan\modules\net\OSSpeak\TextToSRGS\TextToSRGS\obj\Debug\TextToSRGS.exe
+C:\Users\evan\modules\net\OSSpeak\TextToSRGS\TextToSRGS\obj\Debug\TextToSRGS.pdb
