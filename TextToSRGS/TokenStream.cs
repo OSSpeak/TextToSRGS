@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,12 +13,14 @@ namespace TextToSRGS
         private InputStream Input;
         private int Pos;
         private Token Current;
+        private Regex WordRegex;
 
         public TokenStream(InputStream input)
         {
             this.Input = input;
             this.Pos = 0;
             this.Current = null;
+            WordRegex = new Regex(@"[a-zA-Z]");
         }
 
         private string ReadWhile(Func<string, bool> predicate)
@@ -28,9 +31,27 @@ namespace TextToSRGS
             return str;
         }
 
+        private bool IsWhitespace(string ch)
+        {
+            return " \t\n".Contains(ch);
+        }
+
+        private Token ReadWord()
+        {
+            var str = ReadWhile((ch) => WordRegex.IsMatch(ch));
+            Console.WriteLine(str);
+            return new Token("word", str);
+        }
+
         private Token ReadNext()
         {
-            return new Token("ad", "ad");
+            ReadWhile(IsWhitespace);
+            if (Input.Eof() == true) return null;
+            string ch = Input.Peek();
+            Console.WriteLine(ch);
+            if (WordRegex.IsMatch(ch)) return ReadWord();
+            Croak("Invalid Character: " + ch);
+            return null;
         }
         
         public Token Next()

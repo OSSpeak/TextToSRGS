@@ -11,6 +11,7 @@ namespace TextToSRGS
         static void Main(string[] args)
         {
             Api.TextToSRGSXML("foo bar");
+            Console.WriteLine("done");
             Console.ReadLine();
         }
     }

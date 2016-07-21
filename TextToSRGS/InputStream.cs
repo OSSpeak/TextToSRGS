@@ -9,21 +9,21 @@ namespace TextToSRGS
     class InputStream
     {
         
-        private string text;
-        private int pos;
+        private string Input;
+        private int Pos;
 
-        public InputStream(string text)
+        public InputStream(string input)
         {
-            this.text = text;
-            this.pos = 0;
+            this.Input = input;
+            this.Pos = 0;
         }
         public string Next()
         {
-            return text[pos++].ToString();
+            return Input[Pos++].ToString();
         }
         public string Peek()
         {
-            return text.Length > pos ? text[pos].ToString() : "";
+            return Input.Length > Pos ? Input[Pos].ToString() : "";
         }
         public bool Eof()
         {

@@ -10,8 +10,8 @@ namespace TextToSRGS
     {
         public static void TextToSRGSXML(string text)
         {
-            var inputStream = new InputStream(text);
-            System.Console.WriteLine(inputStream.Peek());
+            var p = new Parser(text);
+            p.Parse();
         }
     }
 }
